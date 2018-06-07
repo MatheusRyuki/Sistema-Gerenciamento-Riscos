@@ -2,12 +2,10 @@
 
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser')
-var expressLayouts = require('express-ejs-layouts')
+var bodyParser = require('body-parser');
 
-app.set('view engine', 'ejs'); 
-app.use(expressLayouts);         
-app.use(bodyParser.urlencoded());
+app.set('view engine', 'ejs');        
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', function (req, res) {
