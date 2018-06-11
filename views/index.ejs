@@ -1,6 +1,102 @@
-<% include('partials/header'); %>
+<% include /partials/header %>
+    <style>
+      @font-face { font-family: SinkinSans; src: url('views/partials/SinkinSans-200XLight.otf'); } 
+  
+.top-left {
+    color: white;
+    font-family: SinkinSans;
+    font-size: 2.25em;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
 
+#logo {
+      position: absolute;
+    top: 15%;
+    left: 45%;
+}
 
-<img class="ui fluid image" src="/assets/img/fundo-principal.jpg">
+#campos {
+      position: absolute;
+    bottom: 1%;
+    left: 25%;
+}
 
-<% include('partials/footer'); %>
+#try{
+    background-color: transparent;
+}
+
+#map {
+      position: absolute;
+    bottom: 40%;
+    left: 35%;
+}
+
+#geren {
+      position: absolute;
+    bottom: 40%;
+    left: 35%;
+}
+    </style>
+    
+<body style="background-color: black;">
+
+    <div class="ui fluid container" style="margin-top:7%;">
+        <img class="ui fluid image" src="views/fundo-principal.jpg">
+        <img id="logo" class="ui small image" src="views/company_logoPNG.png">
+        <h1 id='frase' class="top-left">SISTEMA DE GERENCIAMENTO E MAPEAMENTOS DE RISCOS</h1>
+        
+        <div id="campos" class="ui container" style='width:50%;'>
+            <div id='try' class="ui basic horizontal segments">
+                <div id='escolha1'class="ui  segment">
+                    <img class="ui medium image" src="views/mapear.jpg">
+                    <button id='map' class="ui button">Mapear</button>
+                </div>
+                <div  id='escolha2' class="ui  segment">
+                    <img class="ui medium image" src="views/gerenciar.jpg">
+                    <button id='geren' class="ui button">Gerenciar</button> 
+                </div>
+            </div>
+        </div>   
+    </div>
+    
+    
+    
+    <script src="/assets/js/JQuery.js"></script>
+    <script src="/assets/js/semantic-ui.js"></script>
+    <script>
+    
+    $('#logo').hide();
+    $('#frase').hide();
+     $('#escolha1').hide();
+         $('#escolha2').hide();
+         
+    $( document ).ready(function() {
+        setTimeout(
+         function() 
+        {
+              $('#logo').transition({
+                    animation  : 'fade',
+                     duration   : '2s',
+                 });
+                 
+             $('#frase').transition({
+                     animation  : 'fade',
+                    duration   : '2s',
+                     });
+             $('#escolha1').transition({
+                     animation  : 'fade up',
+                    duration   : '2s',
+                     });  
+                     
+        $('#escolha2').transition({
+                     animation  : 'fade up',
+                    duration   : '6s',
+                     });  
+        }, 3000);
+        
+});
+
+    </script>
+<% include /partials/footer %>
